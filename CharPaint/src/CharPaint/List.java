@@ -1,5 +1,3 @@
-package CharPaint;
-
 import java.util.ListIterator;
 
 public interface List<T> extends Iterable<T> {

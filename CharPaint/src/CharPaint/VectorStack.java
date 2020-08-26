@@ -1,5 +1,3 @@
-package CharPaint;
-
 import java.util.EmptyStackException;
 import java.util.Vector;
 

@@ -1,5 +1,3 @@
-package CharPaint;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -23,6 +21,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+import javax.swing.JOptionPane;
+import javax.swing.JDialog;
+
 public class CharPaint extends JPanel implements MouseListener, KeyListener {
 	private static final long serialVersionUID = 1L;
 
@@ -34,12 +35,16 @@ public class CharPaint extends JPanel implements MouseListener, KeyListener {
 																	// this stack
 	private char current = 'x';// current char to print, defaults to x
 	private NewPanel panel = new NewPanel();
+   
+   JFrame frame;//For message popup
 
 	public CharPaint() {
 
 		JMenuBar menuBar;
 		JMenu file, edit;
 		JMenuItem createNew, save, load, exit, undo, redo;
+      
+      JOptionPane.showMessageDialog(frame, "To change the character being used, just press a different one on your keyboard");
 
 		JFrame frame = new JFrame("CharPaint");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -189,6 +194,7 @@ public class CharPaint extends JPanel implements MouseListener, KeyListener {
 			if (s.equals("Exit"))
 				System.exit(0);
 			else if (s.equals("Save")) {
+            JOptionPane.showMessageDialog(frame, "Note:  use the command line");
 				System.out.println("Please enter a filename to save as:  ");
 				String filename;
 				Scanner in = new Scanner(System.in);
@@ -213,6 +219,7 @@ public class CharPaint extends JPanel implements MouseListener, KeyListener {
 				undone = new VectorStack<>();
 				panel.repaint();
 			} else if (s.equals("Load")) {
+            JOptionPane.showMessageDialog(frame, "Note:  use the command line");
 				System.out.println("Please enter a filename to load:  ");
 				String filename;
 				Scanner in = new Scanner(System.in);

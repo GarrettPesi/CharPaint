@@ -1,5 +1,3 @@
-package CharPaint;
-
 import java.io.Serializable;
 
 public class CharObject implements Serializable {

@@ -1,7 +1,6 @@
 /**
  * Stack interface.
  */
-package CharPaint;
 
 public interface Stack<T> {
 
